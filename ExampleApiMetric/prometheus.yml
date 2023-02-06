@@ -13,8 +13,8 @@ alerting:
 
 # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
 rule_files:
-# - "first_rules.yml"
-# - "second_rules.yml"
+  # - "first_rules.yml"
+  # - "second_rules.yml"
 
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
@@ -27,10 +27,15 @@ scrape_configs:
 
     static_configs:
       - targets: ["localhost:9090"]
+      
+      
+  - job_name: "getweatherforecast"
+    metrics_path: '/metrics-text'
+    static_configs:
+       - targets: ["localhost:7225"]
+       
+    
+       
+    
 
-
-  - job_name: "GetWeatherForecast"
-      static_configs:
-        - targets: ["localhost:7225"]
- 
  
