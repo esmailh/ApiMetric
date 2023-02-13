@@ -26,13 +26,13 @@ scrape_configs:
     # scheme defaults to 'http'.
 
     static_configs:
-      - targets: ["localhost:9090"]
+      - targets: ["host.docker.internal:9090"]
       
       
   - job_name: "getweatherforecast"
     metrics_path: '/metrics-text'
     static_configs:
-       - targets: ["localhost:7225"]
+       - targets: ["host.docker.internal:7225"]
        
     
        
